@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects · ALI Research Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="group-style.css">
+  <style>
+    .project-card {
+      background: var(--white); border-radius: var(--radius);
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .project-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      padding: 2rem 1.8rem 1.4rem;
+      position: relative;
+    }
+    .project-icon {
+      font-size: 2.4rem; margin-bottom: .8rem;
+    }
+    .project-status {
+      position: absolute; top: 1rem; right: 1rem;
+      font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+      padding: .25rem .7rem; border-radius: 20px;
+    }
+    .status-active   { background: rgba(72,199,142,.2); color: #48c78e; border: 1px solid #48c78e; }
+    .status-complete { background: rgba(200,168,75,.2); color: var(--gold); border: 1px solid var(--gold); }
+    .project-header h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--white); line-height: 1.35; }
+    .project-header .collab { font-size: .78rem; color: rgba(255,255,255,.55); margin-top: .4rem; }
+    .project-body { padding: 1.4rem 1.8rem 1.8rem; }
+    .project-body p { font-size: .88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.2rem; }
+    .project-tag {
+      font-size: .72rem; padding: .2rem .65rem; border-radius: 20px;
+      background: var(--light); color: var(--muted); border: 1px solid var(--border);
+    }
+    .project-links { display: flex; gap: .7rem; flex-wrap: wrap; }
+
+    /* software section */
+    .software-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.6rem;
+      box-shadow: var(--shadow); display: flex; gap: 1.2rem; align-items: flex-start;
+    }
+    .software-icon {
+      flex-shrink: 0; width: 52px; height: 52px; border-radius: 10px;
+      background: var(--navy); display: flex; align-items: center;
+      justify-content: center; font-size: 1.6rem;
+    }
+    .software-info h4 { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: .3rem; }
+    .software-info p { font-size: .85rem; color: var(--muted); line-height: 1.6; margin-bottom: .7rem; }
+  </style>
+</head>
+<body>
+
+<div class="page-hero">
+  <h1>Projects</h1>
+  <p>Active and completed research projects spanning antibiotic resistance, enzyme mechanisms, and computational methodology development.</p>
+</div>
+
+<!-- ACTIVE PROJECTS -->
+<section class="section">
+  <div class="section-header">
+    <h2>Active Projects</h2>
+    <hr class="gold-rule">
+  </div>
+  <div class="grid-3">
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-status status-active">Active</span>
+        <div class="project-icon">💊</div>
+        <h3>Next-Generation Molecules Beyond Lipinski Space</h3>
+        <div class="collab">Strathclyde &amp; GSK · Palmer Lab</div>
+      </div>
+      <div class="project-body">
+        <p>Developing data-driven approaches to design, synthesise, and evaluate molecules that transcend traditional Lipinski drug-likeness rules — targeting complex biological targets with improved potency and selectivity.</p>
+        <div class="project-tags">
+          <span class="project-tag">ML</span>
+          <span class="project-tag">Drug Design</span>
+          <span class="project-tag">Lipinski Space</span>
+          <span class="project-tag">GSK</span>
+        </div>
+        <div class="project-links">
+          <a href="publications.html" class="btn btn-navy">Publications →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-status status-active">Active</span>
+        <div class="project-icon">🦠</div>
+        <h3>Antibiotic Resistance: β-Lactamase Inhibitors</h3>
+        <div class="collab">Oxford · Schofield &amp; Duarte Groups</div>
+      </div>
+      <div class="project-body">
+        <p>Investigating the mechanisms of β-lactamases, transpeptidases, and deacetylases to develop resistance-breaking inhibitors that enable effective combination therapies against drug-resistant bacteria.</p>
+        <div class="project-tags">
+          <span class="project-tag">AMR</span>
+          <span class="project-tag">β-Lactamase</span>
+          <span class="project-tag">QM/MM</span>
+          <span class="project-tag">Inhibitor Design</span>
+        </div>
+        <div class="project-links">
+          <a href="publications.html" class="btn btn-navy">Publications →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-status status-active">Active</span>
+        <div class="project-icon">⚡</div>
+        <h3>Tetracycline Destructase Resistance (Tet(X))</h3>
+        <div class="collab">Oxford · Schofield Group</div>
+      </div>
+      <div class="project-body">
+        <p>Computational and experimental binding assays to discover Tet(X) inhibitors that combat resistance to tetracycline antibiotics — a major class used against gram-positive and gram-negative infections.</p>
+        <div class="project-tags">
+          <span class="project-tag">Tet(X)</span>
+          <span class="project-tag">Tetracycline</span>
+          <span class="project-tag">Binding Assays</span>
+          <span class="project-tag">Chemical Science</span>
+        </div>
+        <div class="project-links">
+          <a href="https://doi.org/10.1039/D5SC00964B" target="_blank" class="btn btn-navy">Paper →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPLETED PROJECTS -->
+<section class="section section-alt">
+  <div class="section-header">
+    <h2>Completed Projects</h2>
+    <hr class="gold-rule">
+  </div>
+  <div class="grid-3">
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-status status-complete">Complete</span>
+        <div class="project-icon">🔬</div>
+        <h3>Artificial Metalloenzyme Design</h3>
+        <div class="collab">Edinburgh · Jarvis Group</div>
+      </div>
+      <div class="project-body">
+        <p>Structural modelling of artificial metalloenzymes using molecular docking and hybrid QM/MM, integrating computational and experimental approaches to enhance catalytic efficiency.</p>
+        <div class="project-tags">
+          <span class="project-tag">Metalloenzymes</span>
+          <span class="project-tag">QM/MM</span>
+          <span class="project-tag">Edinburgh</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-status status-complete">Complete</span>
+        <div class="project-icon">📊</div>
+        <h3>MCC Theory &amp; SAMPL9 LogP Prediction</h3>
+        <div class="collab">Manchester · Henchman Group</div>
+      </div>
+      <div class="project-body">
+        <p>Development and implementation of the Multiscale Cell Correlation (MCC) method for predicting partition coefficients, applied to the SAMPL9 blind challenge.</p>
+        <div class="project-tags">
+          <span class="project-tag">MCC</span>
+          <span class="project-tag">LogP</span>
+          <span class="project-tag">SAMPL9</span>
+          <span class="project-tag">Free Energy</span>
+        </div>
+        <div class="project-links">
+          <a href="https://doi.org/10.1039/D3CP03076H" target="_blank" class="btn btn-navy">Paper →</a>
+          <a href="https://github.com/HafizSaqibAli/SAMPL9" target="_blank" class="btn btn-navy">Code →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-status status-complete">Complete</span>
+        <div class="project-icon">⚗️</div>
+        <h3>Nonheme Iron Enzyme Mechanisms (PhD)</h3>
+        <div class="collab">Manchester · de Visser Group</div>
+      </div>
+      <div class="project-body">
+        <p>PhD research on reaction kinetics and stability of biomolecules using QM/MM — studying L-Arginine hydroxylation/desaturation, TauD electrostatics, and dioxygenase mechanisms.</p>
+        <div class="project-tags">
+          <span class="project-tag">QM/MM</span>
+          <span class="project-tag">Iron Enzymes</span>
+          <span class="project-tag">Kinetics</span>
+          <span class="project-tag">PhD</span>
+        </div>
+        <div class="project-links">
+          <a href="publications.html" class="btn btn-navy">Publications →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOFTWARE & CODE -->
+<section class="section">
+  <div class="section-header">
+    <h2>Open-Source Code &amp; Data</h2>
+    <hr class="gold-rule">
+    <p>We are committed to open and reproducible science.</p>
+  </div>
+  <div class="grid-2">
+    <div class="software-card">
+      <div class="software-icon">💻</div>
+      <div class="software-info">
+        <h4>SAMPL9 MCC Code</h4>
+        <p>Python code and data files for the energy-entropy MCC method applied to toluene-water LogP prediction in the SAMPL9 blind challenge.</p>
+        <a href="https://github.com/HafizSaqibAli/SAMPL9" target="_blank" class="btn btn-navy">GitHub →</a>
+      </div>
+    </div>
+    <div class="software-card">
+      <div class="software-icon">📁</div>
+      <div class="software-info">
+        <h4>GitHub Repository</h4>
+        <p>All code, datasets, and supplementary materials associated with published papers are available on GitHub.</p>
+        <a href="https://github.com/HafizSaqibAli/" target="_blank" class="btn btn-navy">View All Repos →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="shared-layout.js"></script>
+</body>
+</html>

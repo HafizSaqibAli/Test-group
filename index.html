@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ALI Research Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ALI Research Group — computational chemistry, medicinal chemistry and machine learning at the University of Strathclyde & GSK.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="group-style.css">
+  <style>
+    /* ── HOME-SPECIFIC ────────────────────────────────── */
+
+    /* HERO */
+    .hero {
+      min-height: 88vh;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      background: var(--navy);
+    }
+    /* SVG molecule network background */
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 60%, rgba(30,95,168,.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 25%, rgba(200,168,75,.18) 0%, transparent 50%),
+        radial-gradient(ellipse at 55% 80%, rgba(43,127,212,.15) 0%, transparent 45%);
+    }
+    /* animated molecule dots */
+    .molecule-canvas {
+      position: absolute; inset: 0; pointer-events: none;
+      opacity: .55;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 6%; max-width: 760px;
+    }
+    .hero-eyebrow {
+      font-size: .78rem; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.2rem;
+      animation: fadeUp .5s ease both;
+    }
+    .hero-title {
+      font-family: var(--serif); font-size: clamp(3rem,6vw,5.5rem);
+      color: var(--white); font-weight: 600; line-height: 1.08;
+      margin-bottom: 1.4rem;
+      animation: fadeUp .6s .1s ease both;
+    }
+    .hero-title em { color: var(--gold); font-style: normal; }
+    .hero-desc {
+      font-size: 1.05rem; color: rgba(255,255,255,.7);
+      max-width: 520px; line-height: 1.75; margin-bottom: 2.2rem;
+      animation: fadeUp .6s .2s ease both;
+    }
+    .hero-actions {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      animation: fadeUp .6s .3s ease both;
+    }
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      z-index: 2; display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    }
+    .hero-scroll span { font-size: .72rem; color: rgba(255,255,255,.4); letter-spacing: .1em; text-transform: uppercase; }
+    .scroll-line {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, rgba(255,255,255,.4), transparent);
+      animation: scrollPulse 2s infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: .4; } 50% { opacity: 1; }
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--navy2);
+      padding: 2rem 6%;
+      display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem;
+      border-bottom: 3px solid var(--gold);
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: var(--serif); font-size: 2.8rem; font-weight: 700; color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label { font-size: .8rem; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .08em; margin-top: .3rem; }
+
+    /* RESEARCH PREVIEW */
+    .research-card {
+      background: var(--white); border-radius: var(--radius);
+      border: 1px solid var(--border); overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .research-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .research-img {
+      width: 100%; height: 200px; object-fit: cover;
+      background: linear-gradient(135deg, #1a3a6b 0%, #2d6ea8 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem;
+    }
+    .research-body { padding: 1.4rem; }
+    .research-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--navy); margin-bottom: .5rem; }
+    .research-body p  { font-size: .87rem; color: var(--muted); line-height: 1.65; }
+    .research-body a  { display: inline-block; margin-top: .9rem; font-size: .82rem; font-weight: 600; color: var(--accent); }
+
+    /* LATEST PUBS PREVIEW */
+    .pub-list { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    /* PI SPOTLIGHT */
+    .pi-section {
+      background: var(--navy);
+      padding: 80px 6%;
+      display: flex; gap: 60px; align-items: center;
+    }
+    .pi-photo {
+      flex-shrink: 0; width: 240px; height: 240px;
+      border-radius: 50%; object-fit: cover;
+      border: 4px solid var(--gold);
+      box-shadow: 0 0 0 10px rgba(200,168,75,.15);
+      background: linear-gradient(135deg, #1a3a6b, #2d6ea8);
+    }
+    .pi-text h2 { font-family: var(--serif); font-size: 2.2rem; color: var(--white); margin-bottom: .5rem; }
+    .pi-text .pi-title { color: var(--gold); font-size: .9rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 1rem; }
+    .pi-text p { color: rgba(255,255,255,.72); font-size: .97rem; line-height: 1.75; margin-bottom: 1rem; }
+    .pi-badges { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.4rem; }
+    .pi-badge {
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.8); border-radius: 20px;
+      padding: .3rem .9rem; font-size: .78rem;
+    }
+
+    @media (max-width: 768px) {
+      .pi-section { flex-direction: column; text-align: center; }
+      .pi-badges { justify-content: center; }
+      .stats-bar { gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV injected by shared-layout.js -->
+
+<!-- ── HERO ─────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <canvas class="molecule-canvas" id="molCanvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-eyebrow">University of Strathclyde &amp; GSK · Glasgow, UK</div>
+    <h1 class="hero-title">
+      ALI <em>Research</em><br>Group
+    </h1>
+    <p class="hero-desc">
+      Advancing knowledge at the intersection of computational chemistry, medicinal chemistry, and machine learning — designing next-generation molecules to tackle drug resistance and disease.
+    </p>
+    <div class="hero-actions">
+      <a href="research.html" class="btn btn-primary">Discover Our Research</a>
+      <a href="publications.html" class="btn btn-outline">Publications</a>
+      <a href="team.html" class="btn btn-outline">Meet the Team</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── STATS ─────────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Publications</div></div>
+  <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Citations</div></div>
+  <div class="stat"><div class="stat-num">4</div><div class="stat-label">Research Areas</div></div>
+  <div class="stat"><div class="stat-num">3</div><div class="stat-label">Institutions</div></div>
+</div>
+
+<!-- ── RESEARCH AREAS PREVIEW ─────────────────────────────── -->
+<section class="section">
+  <div class="section-header fade-up">
+    <h2>Key Research Areas</h2>
+    <hr class="gold-rule">
+    <p>Our group focuses on cutting-edge computational approaches to solve real-world challenges in drug discovery and chemical biology.</p>
+  </div>
+  <div class="grid-4">
+    <div class="research-card fade-up">
+      <div class="research-img">⚗️</div>
+      <div class="research-body">
+        <h3>Computational Chemistry</h3>
+        <p>QM/MM calculations, molecular dynamics, and electrostatic modelling of enzyme mechanisms.</p>
+        <a href="research.html">Learn more →</a>
+      </div>
+    </div>
+    <div class="research-card fade-up-2">
+      <div class="research-img">💊</div>
+      <div class="research-body">
+        <h3>Medicinal Chemistry</h3>
+        <p>Design and evaluation of next-generation inhibitors targeting antimicrobial resistance.</p>
+        <a href="research.html">Learn more →</a>
+      </div>
+    </div>
+    <div class="research-card fade-up-3">
+      <div class="research-img">🤖</div>
+      <div class="research-body">
+        <h3>Machine Learning</h3>
+        <p>Data-driven molecular design and property prediction beyond Lipinski space.</p>
+        <a href="research.html">Learn more →</a>
+      </div>
+    </div>
+    <div class="research-card fade-up-4">
+      <div class="research-img">🧬</div>
+      <div class="research-body">
+        <h3>Chemical Biology</h3>
+        <p>Exploring metalloenzymes and bacterial proteins to enable effective combination therapies.</p>
+        <a href="research.html">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PI SPOTLIGHT ───────────────────────────────────────── -->
+<section class="pi-section">
+  <img src="img/profile.png" alt="Dr Hafiz Saqib Ali" class="pi-photo">
+  <div class="pi-text">
+    <h2>Dr Hafiz Saqib Ali</h2>
+    <div class="pi-title">Principal Investigator · Research Associate</div>
+    <p>I am a computational scientist with a broad background in computational chemistry, chemical biology, medicinal chemistry, and machine learning. My work focuses on developing data-driven approaches to the design, synthesis, and evaluation of next-generation molecules — currently at the University of Strathclyde and GSK, Stevenage.</p>
+    <div class="pi-badges">
+      <span class="pi-badge">Strathclyde &amp; GSK</span>
+      <span class="pi-badge">Oxford (former)</span>
+      <span class="pi-badge">Edinburgh (former)</span>
+      <span class="pi-badge">Manchester PhD</span>
+    </div>
+    <div style="display:flex;gap:.9rem;flex-wrap:wrap;">
+      <a href="CV.html" class="btn btn-primary">View CV</a>
+      <a href="https://scholar.google.com/citations?user=qEVrdecAAAAJ&hl=en" target="_blank" class="btn btn-outline">Google Scholar</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── LATEST PUBLICATIONS ────────────────────────────────── -->
+<section class="section section-alt">
+  <div class="section-header">
+    <h2>Latest Publications</h2>
+    <hr class="gold-rule">
+    <p>Recent work from the group spanning antibiotic resistance, enzyme mechanisms, and molecular design.</p>
+  </div>
+  <div class="pub-list">
+
+    <div class="pub-row">
+      <img src="papers/CDIN1.tiff" alt="" class="pub-thumb">
+      <div class="pub-body">
+        <div class="pub-title"><a href="#">The CDIN1-Codanin-1 Complex, Defective in Congenital Dyserythropoietic Anaemia Type I, is an RNA Nuclease</a></div>
+        <div class="pub-authors">Sanja Brolih, <strong>Hafiz Saqib Ali</strong>, Caroline Scott et al.</div>
+        <div class="pub-journal"><em>Nature Communications</em>, <strong>2026</strong> (in press)</div>
+        <div class="pub-chips"><span class="chip chip-new">New</span><a class="chip" href="#">Website</a><a class="chip" href="bibtex/">BibTeX</a></div>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <img src="papers/Pylori.png" alt="" class="pub-thumb">
+      <div class="pub-body">
+        <div class="pub-title"><a href="https://doi.org/10.1186/s13099-026-00814-8">Novel Indole-based Sulfonate and Sulfamate Derivatives as Potent and Selective Urease Inhibitors Targeting Helicobacter Pylori</a></div>
+        <div class="pub-authors">Ghalia Khoder, …, <strong>Hafiz Saqib Ali</strong> et al.</div>
+        <div class="pub-journal"><em>Gut Pathogens</em>, <strong>2026</strong>, 18, 27</div>
+        <div class="pub-chips"><a class="chip" href="https://doi.org/10.1186/s13099-026-00814-8">Website</a><a class="chip" href="bibtex/">BibTeX</a></div>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <img src="papers/TetX.gif" alt="" class="pub-thumb">
+      <div class="pub-body">
+        <div class="pub-title"><a href="https://doi.org/10.1039/D5SC00964B">Binding Assays Enable Discovery of Tet(X) Inhibitors that Combat Tetracycline Destructase Resistance</a></div>
+        <div class="pub-authors">Matthew J. Beech, …, <strong>Hafiz Saqib Ali</strong>, …, Christopher J. Schofield</div>
+        <div class="pub-journal"><em>Chemical Science</em>, <strong>2025</strong>, 16, 9691–9704</div>
+        <div class="pub-chips"><a class="chip" href="https://doi.org/10.1039/D5SC00964B">Website</a><a class="chip" href="bibtex/TetX.ris">BibTeX</a></div>
+      </div>
+    </div>
+
+  </div>
+  <div style="margin-top:2rem;">
+    <a href="publications.html" class="btn btn-navy">View All Publications →</a>
+  </div>
+</section>
+
+<!-- ── LATEST NEWS PREVIEW ───────────────────────────────── -->
+<section class="section">
+  <div class="section-header">
+    <h2>Latest News</h2>
+    <hr class="gold-rule">
+  </div>
+  <div class="news-timeline">
+    <div class="news-entry">
+      <div class="news-date-col"><div class="news-date-badge">Mar<br>2026</div></div>
+      <div class="news-content">
+        <h4>New Position at Strathclyde &amp; GSK</h4>
+        <p>Started Research Associate position with <a href="https://www.palmer-lab.com">Prof. David Palmer</a> at the University of Strathclyde and GSK, Stevenage.</p>
+      </div>
+    </div>
+    <div class="news-entry">
+      <div class="news-date-col"><div class="news-date-badge">Mar<br>2022</div></div>
+      <div class="news-content">
+        <h4>Postdoc at Oxford</h4>
+        <p>Started Postdoc with <a href="https://schofield.web.ox.ac.uk">Prof. Christopher Schofield</a>, FRS, at the University of Oxford.</p>
+      </div>
+    </div>
+    <div class="news-entry">
+      <div class="news-date-col"><div class="news-date-badge">May<br>2021</div></div>
+      <div class="news-content">
+        <h4>PhD Awarded — No Revisions</h4>
+        <p>Successfully defended PhD dissertation without revisions and graduated from The University of Manchester.</p>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:2rem;">
+    <a href="news.html" class="btn btn-navy">All News &amp; Events →</a>
+  </div>
+</section>
+
+<!-- FOOTER injected by shared-layout.js -->
+<script src="shared-layout.js"></script>
+<script>
+// Animated molecule network on canvas
+(function(){
+  const c = document.getElementById('molCanvas');
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  let W, H, nodes;
+  function resize(){ W = c.width = c.offsetWidth; H = c.height = c.offsetHeight; init(); }
+  function init(){
+    nodes = Array.from({length: 55}, () => ({
+      x: Math.random()*W, y: Math.random()*H,
+      vx: (Math.random()-.5)*.4, vy: (Math.random()-.5)*.4,
+      r: 2 + Math.random()*2.5
+    }));
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    // edges
+    for(let i=0;i<nodes.length;i++){
+      for(let j=i+1;j<nodes.length;j++){
+        const dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if(d<130){
+          ctx.beginPath();
+          ctx.strokeStyle=`rgba(200,168,75,${.55*(1-d/130)})`;
+          ctx.lineWidth=.8;
+          ctx.moveTo(nodes[i].x,nodes[i].y);
+          ctx.lineTo(nodes[j].x,nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    // nodes
+    nodes.forEach(n=>{
+      ctx.beginPath();
+      ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(200,168,75,.7)';
+      ctx.fill();
+      n.x+=n.vx; n.y+=n.vy;
+      if(n.x<0||n.x>W) n.vx*=-1;
+      if(n.y<0||n.y>H) n.vy*=-1;
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+})();
+</script>
+</body>
+</html>

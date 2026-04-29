@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Publications · ALI Research Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="group-style.css">
+  <style>
+    /* Filter bar */
+    .filter-bar {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 1rem 6%; display: flex; gap: .6rem; flex-wrap: wrap;
+      position: sticky; top: 64px; z-index: 100;
+    }
+    .filter-btn {
+      padding: .4rem 1.1rem; border-radius: 20px; font-size: .82rem; font-weight: 500;
+      border: 1.5px solid var(--border); color: var(--muted); cursor: pointer;
+      background: var(--white); transition: all .15s; font-family: var(--sans);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--accent); color: var(--accent); background: #eaf3fb;
+    }
+
+    /* Year section */
+    .year-section { margin-bottom: 3rem; }
+    .year-label {
+      font-family: var(--serif); font-size: 1.6rem; color: var(--navy);
+      border-left: 4px solid var(--gold); padding-left: .9rem;
+      margin-bottom: 1.4rem;
+    }
+    .pub-stack { display: flex; flex-direction: column; gap: 1.1rem; }
+
+    /* Scholar link */
+    .scholar-banner {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.4rem 2rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .scholar-banner p { font-size: .93rem; color: var(--muted); }
+    .scholar-banner strong { color: var(--navy); }
+
+    @media (max-width: 600px) { .scholar-banner { flex-direction: column; } }
+  </style>
+</head>
+<body>
+
+<div class="page-hero">
+  <h1>Publications</h1>
+  <p>Peer-reviewed research spanning computational chemistry, medicinal chemistry, antibiotic resistance, and machine learning.</p>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterPubs('all',this)">All Years</button>
+  <button class="filter-btn" onclick="filterPubs('2026',this)">2026</button>
+  <button class="filter-btn" onclick="filterPubs('2025',this)">2025</button>
+  <button class="filter-btn" onclick="filterPubs('2024',this)">2024</button>
+  <button class="filter-btn" onclick="filterPubs('2023',this)">2023</button>
+  <button class="filter-btn" onclick="filterPubs('2022',this)">2022</button>
+</div>
+
+<section class="section">
+
+  <div class="scholar-banner">
+    <p><strong>Full publication record</strong> — including citation counts and h-index available on Google Scholar.</p>
+    <a href="https://scholar.google.com/citations?user=qEVrdecAAAAJ&hl=en" target="_blank" class="btn btn-navy">Google Scholar →</a>
+  </div>
+
+  <!-- 2026 -->
+  <div class="year-section" data-year="2026">
+    <div class="year-label">2026</div>
+    <div class="pub-stack">
+
+      <div class="pub-row">
+        <img src="papers/CDIN1.tiff" alt="" class="pub-thumb">
+        <div class="pub-body">
+          <div class="pub-title"><a href="#">The CDIN1-Codanin-1 Complex, Defective in Congenital Dyserythropoietic Anaemia Type I, is an RNA Nuclease</a></div>
+          <div class="pub-authors">Sanja Brolih, <strong>Hafiz Saqib Ali</strong>, Caroline Scott, Aude-Anais Olijnik, Hazel Aitkenhead, Gemma Moir-Meyer, Angeline E. Gavard, Yuliana Yosaatmadja, Douglas R. Higgs, Veronica Buckle, Noemi Roy, Opher Gileadi, Joseph A. Newman, Fernanda Duarte, Christian Babbs, Peter J. McHugh</div>
+          <div class="pub-journal"><em>Nature Communications</em>, <strong>2026</strong> (Accepted/in-press)</div>
+          <div class="pub-chips"><span class="chip chip-new">New</span><a class="chip" href="#">Website</a><a class="chip" href="bibtex/">BibTeX</a></div>
+        </div>
+      </div>
+
+      <div class="pub-row">
+        <img src="papers/Pylori.png" alt="" class="pub-thumb">
+        <div class="pub-body">
+          <div class="pub-title"><a href="https://doi.org/10.1186/s13099-026-00814-8">Novel Indole-based Sulfonate and Sulfamate Derivatives as Potent and Selective Urease Inhibitors Targeting Helicobacter Pylori: A Promising Therapeutic Strategy</a></div>
+          <div class="pub-authors">Ghalia Khoder, Esra M. Mustafa, Sumera Zaib, Anil Ravi, Afnan I. Shahin, Seyed-Omar Zaraei, Nehal Rana, Hanan S. Anbar, <strong>Hafiz Saqib Ali</strong>, Shamsul Qumar, Merylin Sebastian, Ragheb Alsheikh Zein, Mohammed I. El-Gamal</div>
+          <div class="pub-journal"><em>Gut Pathogens</em>, <strong>2026</strong>, 18, 27</div>
+          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1186/s13099-026-00814-8">Website</a><a class="chip" href="bibtex/">BibTeX</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2025 -->
+  <div class="year-section" data-year="2025">
+    <div class="year-label">2025</div>
+    <div class="pub-stack">
+
+      <div class="pub-row">
+        <img src="papers/TetX.gif" alt="" class="pub-thumb">
+        <div class="pub-body">
+          <div class="pub-title"><a href="https://doi.org/10.1039/D5SC00964B">Binding Assays Enable Discovery of Tet(X) Inhibitors that Combat Tetracycline Destructase Resistance</a></div>
+          <div class="pub-authors">Matthew J. Beech, Edmond C. Toma, Helen G. Smith, Maria M. Trush, Jit H.J. Ang, Mei Y. Wong, Chung H.J. Wong, <strong>Hafiz Saqib Ali</strong>, Zakia Butt, Viha Goel, Fernanda Duarte, Alistair J.M. Farley, Timothy R. Walsh, Christopher J. Schofield</div>
+          <div class="pub-journal"><em>Chemical Science</em>, <strong>2025</strong>, 16, 9691–9704</div>
+          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1039/D5SC00964B">Website</a><a class="chip" href="bibtex/TetX.ris">BibTeX</a></div>
+        </div>
+      </div>
+
+      <div class="pub-row">
+        <img src="papers/α-amylase.png" alt="" class="pub-thumb">
+        <div class="pub-body">
+          <div class="pub-title"><a href="https://doi.org/10.1016/j.ejmech.2025.117584">Synthesis, In-vitro and In-vivo Evaluation, and Computational Modeling Analysis of Thioxothiazolidine Derivatives as Highly Potent and Selective α-amylase Inhibitors</a></div>
+          <div class="pub-authors">Anil Ravi, Sumera Zaib, Shabab Zahra, Imtiaz Khan, <strong>Hafiz Saqib Ali</strong>, Mohammed Ibrahim El-Gamal, Hanan Sayed Anbar</div>
+          <div class="pub-journal"><em>European Journal of Medicinal Chemistry</em>, <strong>2025</strong>, 291, 117584</div>
+          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.ejmech.2025.117584">Website</a><a class="chip" href="bibtex/α-amylase.ris">BibTeX</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2024 -->
+  <div class="year-section" data-year="2024">
+    <div class="year-label">2024</div>
+    <div class="pub-stack">
+
+      <div class="pub-row">
+        <img src="papers/Electric_Field_Vector.png" alt="" class="pub-thumb">
+        <div class="pub-body">
+          <div class="pub-title"><a href="https://doi.org/10.1002/chem.202304172">QM/MM Study Into the Mechanism of Oxidative C=C Double Bond Cleavage by Lignostilbene-alpha,beta-Dioxygenase</a></div>
+          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Sam P. de Visser</div>
+          <div class="pub-journal"><em>Chemistry: A European Journal</em>, <strong>2024</strong>, e202304172</div>
+          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1002/chem.202304172">Website</a><a class="chip" href="bibtex/">BibTeX</a></div>
+        </div>
+      </div>
+
+      <div class="pub-row">
+        <img src="papers/VioC_MT.jpeg" alt="" class="pub-thumb">
+        <div class="pub-body">
+          <div class="pub-title"><a href="https://doi.org/10.1021/acscatal.4c02365">Probing Ferryl Reactivity in a Nonheme Iron Oxygenase Using an Expanded Genetic Code</a></div>
+          <div class="pub-authors">Florence J. Hardy, Matthew G. Quesne, Emilie F. Gérard, Jingming Zhao, Mary Ortmayer, Christopher J. Taylor, <strong>Hafiz Saqib Ali</strong>, Jeffrey W. Slater, Colin W. Levy, Derren J. Heyes, J. Martin Bollinger, Jr., Sam P. de Visser, Anthony P. Green</div>
+          <div class="pub-journal"><em>ACS Catalysis</em>, <strong>2024</strong>, 14, 11584–11590</div>
+          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1021/acscatal.4c02365">Website</a><a class="chip" href="bibtex/VioC_MT.ris">BibTeX</a></div>
+        </div>
+      </div>
+
+      <div class="pub-row">
+        <img src="papers/L_Arg_Mechanism.png" alt="" class="pub-thumb">
+        <div class="pub-body">
+          <div class="pub-title"><a href="https://www.frontiersin.org/articles/10.3389/fchem.2024.1365494/">Catalytic Divergencies in the Mechanism of L-Arginine Hydroxylating Nonheme Iron Enzymes</a></div>
+          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Sam P. de Visser</div>
+          <div class="pub-journal"><em>Frontiers in Chemistry</em>, <strong>2024</strong>, 12, 1–14</div>
+          <div class="pub-chips"><a class="chip" href="https://www.frontiersin.org/articles/10.3389/fchem.2024.1365494/">Website</a><a class="chip" href="bibtex/">BibTeX</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2023 -->
+  <div class="year-section" data-year="2023">
+    <div class="year-label">2023</div>
+    <div class="pub-stack">
+
+      <div class="pub-row">
+        <img src="papers/NapI.tiff" alt="" class="pub-thumb">
+        <div class="pub-body">
+          <div class="pub-title"><a href="https://doi.org/10.1021/acscatal.3c02262">How Does the Nonheme Iron Enzyme NapI React through L-Arginine Desaturation Rather Than Hydroxylation? A QM/MM Study</a></div>
+          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Jim Warwicker, Sam P. de Visser</div>
+          <div class="pub-journal"><em>ACS Catalysis</em>, <strong>2023</strong>, 13, 10705–10721</div>
+          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1021/acscatal.3c02262">Website</a><a class="chip" href="bibtex/NapI.bib">BibTeX</a></div>
+        </div>
+      </div>
+
+      <div class="pub-row">
+        <img src="papers/SAMPL9.tiff" alt="" class="pub-thumb">
+        <div class="pub-body">
+          <div class="pub-title"><a href="https://doi.org/10.1039/D3CP03076H">Energy-Entropy Multiscale Cell Correlation Method to Predict Toluene-Water LogP in the SAMPL9 Challenge</a></div>
+          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Richard Henchman</div>
+          <div class="pub-journal"><em>Physical Chemistry Chemical Physics</em>, <strong>2023</strong>, 25, 27524–27531</div>
+          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1039/D3CP03076H">Website</a><a class="chip" href="bibtex/SAMPL9.bib">BibTeX</a><a class="chip" href="https://github.com/HafizSaqibAli/SAMPL9">Code</a><a class="chip" href="https://github.com/HafizSaqibAli/SAMPL9/tree/main/Datafiles">Data</a></div>
+        </div>
+      </div>
+
+      <div class="pub-row">
+        <img src="papers/Gold1.jpeg" alt="" class="pub-thumb">
+        <div class="pub-body">
+          <div class="pub-title"><a href="https://doi.org/10.1039/D2RA06210K">Impact of Counteranions on N-heterocyclic Carbene Gold(I)-Catalyzed Cyclization of Propargylic Amide</a></div>
+          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Aqeel A. Hussein, Mohammed Obies</div>
+          <div class="pub-journal"><em>RSC Advances</em>, <strong>2023</strong>, 13, 2896–2902</div>
+          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1039/D2RA06210K">Website</a><a class="chip" href="bibtex/Gold1.bib">BibTeX</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2022 -->
+  <div class="year-section" data-year="2022">
+    <div class="year-label">2022</div>
+    <div class="pub-stack">
+
+      <div class="pub-row">
+        <img src="papers/TauD.tiff" alt="" class="pub-thumb">
+        <div class="pub-body">
+          <div class="pub-title"><a href="https://doi.org/10.1002/chem.202104167">Electrostatic Perturbations in the Substrate-Binding Pocket of Taurine/α-Ketoglutarate Dioxygenase Determine its Selectivity</a></div>
+          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Sam P. de Visser</div>
+          <div class="pub-journal"><em>Chemistry: A European Journal</em>, <strong>2022</strong>, 16, e202104167</div>
+          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1002/chem.202104167">Website</a><a class="chip" href="bibtex/TauD.bib">BibTeX</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<script src="shared-layout.js"></script>
+<script>
+function filterPubs(year, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.year-section').forEach(sec => {
+    sec.style.display = (year === 'all' || sec.dataset.year === year) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

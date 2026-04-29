@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Research Areas · ALI Research Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="group-style.css">
+  <style>
+    .area-block {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+      align-items: center; padding: 70px 6%;
+    }
+    .area-block.reverse { direction: rtl; }
+    .area-block.reverse > * { direction: ltr; }
+    .area-block.alt { background: var(--light); }
+    .area-visual {
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 6rem;
+    }
+    .area-content h2 { font-family: var(--serif); font-size: 2rem; color: var(--navy); margin-bottom: .5rem; }
+    .area-content .area-tag {
+      font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--accent); margin-bottom: .8rem;
+    }
+    .area-content p { color: var(--muted); font-size: .95rem; line-height: 1.8; margin-bottom: 1rem; }
+    .area-content ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1.4rem; }
+    .area-content ul li {
+      font-size: .88rem; color: var(--text); padding-left: 1.2rem; position: relative;
+    }
+    .area-content ul li::before {
+      content: '▸'; position: absolute; left: 0; color: var(--gold); font-size: .7rem; top: .2rem;
+    }
+    @media (max-width: 768px) {
+      .area-block { grid-template-columns: 1fr; gap: 2rem; }
+      .area-block.reverse { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-hero">
+  <h1>Research Areas</h1>
+  <p>Our group focuses on cutting-edge computational approaches to solve real-world challenges in drug discovery, antibiotic resistance, and chemical biology.</p>
+</div>
+
+<!-- AREA 1 -->
+<div class="area-block">
+  <div class="area-visual">⚗️</div>
+  <div class="area-content">
+    <div class="area-tag">Area 01</div>
+    <h2>Computational Chemistry</h2>
+    <hr class="gold-rule">
+    <p>We employ state-of-the-art quantum mechanics/molecular mechanics (QM/MM) calculations, molecular dynamics simulations, and electrostatic modelling to understand enzyme mechanisms at an atomic level.</p>
+    <ul>
+      <li>QM/MM studies of enzyme reaction mechanisms</li>
+      <li>Electrostatic perturbation analysis in active sites</li>
+      <li>Free energy calculations and transition state theory</li>
+      <li>Multiscale cell correlation (MCC) methods</li>
+      <li>LogP and partition coefficient prediction</li>
+    </ul>
+    <a href="publications.html" class="btn btn-navy">Related Publications →</a>
+  </div>
+</div>
+
+<!-- AREA 2 -->
+<div class="area-block reverse alt">
+  <div class="area-visual">💊</div>
+  <div class="area-content">
+    <div class="area-tag">Area 02</div>
+    <h2>Medicinal Chemistry &amp; Drug Design</h2>
+    <hr class="gold-rule">
+    <p>We develop novel inhibitors targeting proteins involved in antimicrobial resistance, with a particular focus on β-lactamases, transpeptidases, and deacetylases — aiming to restore the efficacy of existing antibiotics.</p>
+    <ul>
+      <li>β-lactamase and transpeptidase inhibitor design</li>
+      <li>Tetracycline destructase (Tet(X)) inhibitors</li>
+      <li>Urease inhibitors targeting <em>H. pylori</em></li>
+      <li>Structure-activity relationship (SAR) analysis</li>
+      <li>Molecules beyond Lipinski space</li>
+    </ul>
+    <a href="publications.html" class="btn btn-navy">Related Publications →</a>
+  </div>
+</div>
+
+<!-- AREA 3 -->
+<div class="area-block">
+  <div class="area-visual">🤖</div>
+  <div class="area-content">
+    <div class="area-tag">Area 03</div>
+    <h2>Machine Learning &amp; Data Science</h2>
+    <hr class="gold-rule">
+    <p>We develop and apply machine learning models to accelerate molecular design, predict physicochemical properties, and identify novel chemical scaffolds with therapeutic potential.</p>
+    <ul>
+      <li>Data-driven molecular property prediction</li>
+      <li>Graph neural networks for molecular design</li>
+      <li>ADMET profiling using ML models</li>
+      <li>Generative models for de novo drug design</li>
+      <li>Integration of experimental and computational data</li>
+    </ul>
+    <a href="publications.html" class="btn btn-navy">Related Publications →</a>
+  </div>
+</div>
+
+<!-- AREA 4 -->
+<div class="area-block reverse alt">
+  <div class="area-visual">🧬</div>
+  <div class="area-content">
+    <div class="area-tag">Area 04</div>
+    <h2>Chemical Biology &amp; Metalloenzymes</h2>
+    <hr class="gold-rule">
+    <p>We investigate artificial and natural metalloenzymes, combining computational structural modelling with mechanistic insights to enhance catalytic efficiency and inspire the design of new biocatalysts.</p>
+    <ul>
+      <li>Artificial metalloenzyme structural modelling</li>
+      <li>Nonheme iron enzyme mechanisms</li>
+      <li>NHC gold(I)-catalysed reactions</li>
+      <li>Ferryl reactivity in oxygenases</li>
+      <li>RNA nuclease activity in CDAs</li>
+    </ul>
+    <a href="publications.html" class="btn btn-navy">Related Publications →</a>
+  </div>
+</div>
+
+<script src="shared-layout.js"></script>
+</body>
+</html>

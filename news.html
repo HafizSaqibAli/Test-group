@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>News &amp; Events · ALI Research Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="group-style.css">
+  <style>
+    .news-layout { display: grid; grid-template-columns: 1fr 320px; gap: 4rem; }
+
+    /* Big news cards */
+    .news-card {
+      background: var(--white); border-radius: var(--radius);
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden; margin-bottom: 1.6rem;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .news-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .news-card-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      padding: 1.4rem 1.8rem;
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+    }
+    .news-card-date {
+      font-family: var(--serif); font-size: 1.8rem; color: var(--gold); font-weight: 700;
+      line-height: 1; white-space: nowrap;
+    }
+    .news-card-date span { display: block; font-size: .75rem; font-family: var(--sans); font-weight: 500; color: rgba(255,255,255,.55); letter-spacing: .06em; text-transform: uppercase; margin-top: .2rem; }
+    .news-card-type {
+      font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+      padding: .25rem .75rem; border-radius: 20px; margin-top: .25rem;
+    }
+    .type-position  { background: rgba(72,199,142,.2); color: #48c78e; border: 1px solid #48c78e; }
+    .type-paper     { background: rgba(45,110,168,.25); color: #7eb8f0; border: 1px solid #7eb8f0; }
+    .type-award     { background: rgba(200,168,75,.2); color: var(--gold); border: 1px solid var(--gold); }
+    .type-milestone { background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.2); }
+    .news-card-body { padding: 1.6rem 1.8rem; }
+    .news-card-body h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--navy); margin-bottom: .6rem; line-height: 1.35; }
+    .news-card-body p  { font-size: .9rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
+
+    /* Sidebar */
+    .sidebar-widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 1.4rem; margin-bottom: 1.6rem;
+    }
+    .sidebar-widget h4 {
+      font-family: var(--serif); font-size: 1.1rem; color: var(--navy);
+      border-bottom: 2px solid var(--gold); padding-bottom: .5rem; margin-bottom: 1rem;
+    }
+    .quick-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+    .quick-list li { font-size: .83rem; color: var(--muted); padding-left: 1rem; position: relative; line-height: 1.5; }
+    .quick-list li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); font-size: .65rem; top: .25rem; }
+    .quick-list a { color: var(--accent); }
+
+    @media (max-width: 900px) {
+      .news-layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-hero">
+  <h1>News &amp; Events</h1>
+  <p>Latest updates, publications, positions, and milestones from the ALI Research Group.</p>
+</div>
+
+<section class="section">
+  <div class="news-layout">
+
+    <!-- MAIN NEWS -->
+    <div>
+
+      <div class="news-card">
+        <div class="news-card-header">
+          <div class="news-card-date">Mar 2026<span>2026</span></div>
+          <span class="news-card-type type-position">New Position</span>
+        </div>
+        <div class="news-card-body">
+          <h3>Research Associate at University of Strathclyde &amp; GSK</h3>
+          <p>Excited to start a new Research Associate position with <a href="https://www.palmer-lab.com">Prof. David Palmer</a> at the Department of Pure &amp; Applied Chemistry, University of Strathclyde, and GSK, Stevenage, UK. This role focuses on developing data-driven approaches to next-generation molecular design.</p>
+          <a href="https://www.palmer-lab.com" target="_blank" class="btn btn-navy">Palmer Lab →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-card-header">
+          <div class="news-card-date">2026<span>In Press</span></div>
+          <span class="news-card-type type-paper">New Paper</span>
+        </div>
+        <div class="news-card-body">
+          <h3>Nature Communications: CDIN1-Codanin-1 Complex is an RNA Nuclease</h3>
+          <p>Our work on the CDIN1-Codanin-1 complex — defective in Congenital Dyserythropoietic Anaemia Type I — has been accepted in <em>Nature Communications</em>. This paper reveals a previously unknown RNA nuclease activity with implications for understanding CDA-I disease mechanisms.</p>
+          <a href="#" class="btn btn-navy">Read Paper →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-card-header">
+          <div class="news-card-date">Mar 2022<span>2022</span></div>
+          <span class="news-card-type type-position">New Position</span>
+        </div>
+        <div class="news-card-body">
+          <h3>Postdoctoral Research Associate at University of Oxford</h3>
+          <p>Started a Postdoc with <a href="https://schofield.web.ox.ac.uk">Prof. Christopher Schofield</a>, FRS, at the Ineos Oxford Institute for Antimicrobial Research and the Department of Chemistry, University of Oxford. Research focused on β-lactamases and resistance-breaking inhibitors.</p>
+          <a href="https://www.ineosoxford.ox.ac.uk" target="_blank" class="btn btn-navy">INEOS Oxford →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-card-header">
+          <div class="news-card-date">Sep 2021<span>2021</span></div>
+          <span class="news-card-type type-position">New Position</span>
+        </div>
+        <div class="news-card-body">
+          <h3>Postdoctoral Research Associate at University of Edinburgh</h3>
+          <p>Joined <a href="https://www.amandajarvis.co.uk">Dr. Amanda Jarvis'</a> group at the University of Edinburgh, working on structural modelling of artificial metalloenzymes to enhance their efficiency using molecular docking and QM/MM methods.</p>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-card-header">
+          <div class="news-card-date">May 2021<span>2021</span></div>
+          <span class="news-card-type type-milestone">Milestone</span>
+        </div>
+        <div class="news-card-body">
+          <h3>PhD Awarded — No Revisions Required</h3>
+          <p>Successfully defended PhD dissertation at The University of Manchester without revisions — a significant milestone! The thesis covered the development and implementation of algorithms to determine reaction kinetics and stability of biomolecules.</p>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-card-header">
+          <div class="news-card-date">Jul 2019<span>2019</span></div>
+          <span class="news-card-type type-paper">First Paper</span>
+        </div>
+        <div class="news-card-body">
+          <h3>First PhD Publication: Multiscale Cell Correlation Theory</h3>
+          <p>The first paper from PhD work on <a href="https://www.mdpi.com/1099-4300/21/8/750">Multiscale Cell Correlation (MCC) Theory</a> was published in <em>Entropy</em>. This foundational work underpins later applications to free energy prediction and the SAMPL9 challenge.</p>
+          <a href="https://www.mdpi.com/1099-4300/21/8/750" target="_blank" class="btn btn-navy">Read Paper →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-card-header">
+          <div class="news-card-date">Aug 2017<span>2017</span></div>
+          <span class="news-card-type type-award">Award</span>
+        </div>
+        <div class="news-card-body">
+          <h3>Chief Minister Merit Scholarship — Government of Pakistan</h3>
+          <p>Honoured to receive the <a href="https://www.peef.org.pk/cmms">Chief Minister Merit Scholarship</a> from the Government of Pakistan — enabling pursuit of a PhD at one of the world's Top 50 Universities.</p>
+          <a href="https://www.peef.org.pk/cmms" target="_blank" class="btn btn-navy">Scholarship Info →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside>
+
+      <div class="sidebar-widget">
+        <h4>Quick Links</h4>
+        <ul class="quick-list">
+          <li><a href="https://scholar.google.com/citations?user=qEVrdecAAAAJ&hl=en" target="_blank">Google Scholar Profile</a></li>
+          <li><a href="https://github.com/HafizSaqibAli/" target="_blank">GitHub Repositories</a></li>
+          <li><a href="https://twitter.com/HafizSaqibAl1" target="_blank">Twitter / X</a></li>
+          <li><a href="https://www.linkedin.com/in/dr-h-saqib-ali-02a324123/" target="_blank">LinkedIn</a></li>
+          <li><a href="mailto:hafiz.ali@strath.ac.uk">Email Dr Ali</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h4>Affiliations</h4>
+        <ul class="quick-list">
+          <li><a href="https://www.strath.ac.uk/science/chemistry/" target="_blank">Dept. Pure &amp; Applied Chemistry, Strathclyde</a></li>
+          <li><a href="https://www.gsk.com" target="_blank">GSK, Stevenage, UK</a></li>
+          <li><a href="https://www.palmer-lab.com" target="_blank">Palmer Lab</a></li>
+          <li><a href="https://www.ineosoxford.ox.ac.uk" target="_blank">INEOS Oxford Institute (former)</a></li>
+          <li><a href="https://www.mib.manchester.ac.uk" target="_blank">Manchester Inst. of Biotechnology (PhD)</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h4>Contact</h4>
+        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.8rem;">Interested in collaboration or joining the group?</p>
+        <a href="mailto:hafiz.ali@strath.ac.uk" class="btn btn-navy" style="width:100%;justify-content:center;">Get in Touch →</a>
+      </div>
+
+    </aside>
+  </div>
+</section>
+
+<script src="shared-layout.js"></script>
+</body>
+</html>

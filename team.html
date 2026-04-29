@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Team · ALI Research Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="group-style.css">
+  <style>
+    /* PI featured card */
+    .pi-featured {
+      background: var(--navy);
+      padding: 60px 6%;
+      display: flex; gap: 50px; align-items: center;
+    }
+    .pi-featured-photo {
+      flex-shrink: 0; width: 200px; height: 200px;
+      border-radius: 50%; object-fit: cover;
+      border: 4px solid var(--gold);
+      box-shadow: 0 0 0 10px rgba(200,168,75,.12);
+      background: linear-gradient(135deg,#1a3a6b,#2d6ea8);
+    }
+    .pi-featured-text h2 { font-family: var(--serif); font-size: 2rem; color: var(--white); margin-bottom: .3rem; }
+    .pi-featured-text .role { color: var(--gold); font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .9rem; }
+    .pi-featured-text p { color: rgba(255,255,255,.7); font-size: .95rem; line-height: 1.75; margin-bottom: 1.2rem; max-width: 620px; }
+    .pi-featured-text .pi-links { display: flex; gap: .8rem; flex-wrap: wrap; }
+
+    /* collaborators */
+    .collab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .collab-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.4rem;
+      box-shadow: var(--shadow);
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .collab-initial {
+      flex-shrink: 0; width: 52px; height: 52px;
+      border-radius: 50%; background: var(--navy2);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 1.2rem; color: var(--gold); font-weight: 600;
+    }
+    .collab-info h4 { font-size: .95rem; font-weight: 600; color: var(--navy); margin-bottom: .2rem; }
+    .collab-info .collab-role { font-size: .78rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .3rem; }
+    .collab-info p { font-size: .82rem; color: var(--muted); line-height: 1.5; }
+    .collab-info a { font-size: .78rem; color: var(--accent); }
+
+    /* join section */
+    .join-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      padding: 70px 6%; text-align: center;
+    }
+    .join-section h2 { font-family: var(--serif); font-size: 2.2rem; color: var(--white); margin-bottom: .8rem; }
+    .join-section p { color: rgba(255,255,255,.7); max-width: 520px; margin: 0 auto 2rem; font-size: .97rem; line-height: 1.75; }
+
+    @media (max-width: 900px) { .collab-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) {
+      .pi-featured { flex-direction: column; text-align: center; }
+      .pi-featured-text .pi-links { justify-content: center; }
+      .collab-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-hero">
+  <h1>Our Team</h1>
+  <p>Meet the researchers driving innovation at the ALI Research Group.</p>
+</div>
+
+<!-- PI -->
+<div class="pi-featured">
+  <img src="img/profile.png" alt="Dr Hafiz Saqib Ali" class="pi-featured-photo">
+  <div class="pi-featured-text">
+    <h2>Dr Hafiz Saqib Ali</h2>
+    <div class="role">Principal Investigator · Research Associate</div>
+    <p>Computational scientist with expertise in QM/MM, molecular dynamics, medicinal chemistry, and machine learning. Currently at the University of Strathclyde &amp; GSK, Stevenage, working on data-driven molecular design. Previously at Oxford, Edinburgh, and Manchester.</p>
+    <div class="pi-links">
+      <a href="https://scholar.google.com/citations?user=qEVrdecAAAAJ&hl=en" target="_blank" class="btn btn-primary">Google Scholar</a>
+      <a href="https://github.com/HafizSaqibAli/" target="_blank" class="btn btn-outline">GitHub</a>
+      <a href="https://www.linkedin.com/in/dr-h-saqib-ali-02a324123/" target="_blank" class="btn btn-outline">LinkedIn</a>
+      <a href="CV.html" class="btn btn-outline">CV</a>
+    </div>
+  </div>
+</div>
+
+<!-- SUPERVISORS & COLLABORATORS -->
+<section class="section">
+  <div class="section-header">
+    <h2>Supervisors &amp; Collaborators</h2>
+    <hr class="gold-rule">
+    <p>Key academic and industry partners who shape our research.</p>
+  </div>
+  <div class="collab-grid">
+
+    <div class="collab-card">
+      <div class="collab-initial">DP</div>
+      <div class="collab-info">
+        <h4>Prof. David Palmer</h4>
+        <div class="collab-role">Supervisor · Strathclyde</div>
+        <p>Professor of Computational Chemistry, University of Strathclyde.</p>
+        <a href="https://www.palmer-lab.com" target="_blank">palmer-lab.com →</a>
+      </div>
+    </div>
+
+    <div class="collab-card">
+      <div class="collab-initial">AB</div>
+      <div class="collab-info">
+        <h4>Dr Andrew Baxter</h4>
+        <div class="collab-role">Supervisor · GSK</div>
+        <p>Senior Scientist at GSK, Stevenage, UK.</p>
+        <a href="https://www.linkedin.com/in/andrew-baxter-bb38a414a/" target="_blank">LinkedIn →</a>
+      </div>
+    </div>
+
+    <div class="collab-card">
+      <div class="collab-initial">CS</div>
+      <div class="collab-info">
+        <h4>Prof. Christopher Schofield, FRS</h4>
+        <div class="collab-role">Collaborator · Oxford</div>
+        <p>Professor of Chemistry, University of Oxford. Antibiotic resistance, β-lactamases.</p>
+        <a href="https://schofield.web.ox.ac.uk" target="_blank">schofield.web.ox.ac.uk →</a>
+      </div>
+    </div>
+
+    <div class="collab-card">
+      <div class="collab-initial">FD</div>
+      <div class="collab-info">
+        <h4>Prof. Fernanda Duarte</h4>
+        <div class="collab-role">Collaborator · Oxford</div>
+        <p>Associate Professor, Department of Chemistry, University of Oxford.</p>
+        <a href="https://www.duartegroupchem.org" target="_blank">duartegroupchem.org →</a>
+      </div>
+    </div>
+
+    <div class="collab-card">
+      <div class="collab-initial">AJ</div>
+      <div class="collab-info">
+        <h4>Dr Amanda Jarvis</h4>
+        <div class="collab-role">Collaborator · Edinburgh</div>
+        <p>Royal Society University Research Fellow, University of Edinburgh. Artificial metalloenzymes.</p>
+        <a href="https://www.amandajarvis.co.uk" target="_blank">amandajarvis.co.uk →</a>
+      </div>
+    </div>
+
+    <div class="collab-card">
+      <div class="collab-initial">SV</div>
+      <div class="collab-info">
+        <h4>Prof. Samuel de Visser, FRS</h4>
+        <div class="collab-role">Collaborator · Manchester</div>
+        <p>Professor, Manchester Institute of Biotechnology, University of Manchester.</p>
+        <a href="https://research.manchester.ac.uk/en/persons/sam.devisser" target="_blank">Profile →</a>
+      </div>
+    </div>
+
+    <div class="collab-card">
+      <div class="collab-initial">RH</div>
+      <div class="collab-info">
+        <h4>Dr Richard Henchman</h4>
+        <div class="collab-role">PhD Supervisor · Manchester</div>
+        <p>Reader, Department of Chemistry, University of Manchester. Free energy methods.</p>
+        <a href="https://scholar.google.com/citations?user=9kUV7lUAAAAJ&hl=en" target="_blank">Google Scholar →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- JOIN -->
+<div class="join-section">
+  <h2>Join the Group</h2>
+  <p>We are always looking for motivated PhD students, postdoctoral researchers, and visiting scientists with a passion for computational chemistry and drug discovery.</p>
+  <a href="mailto:hafiz.ali@strath.ac.uk" class="btn btn-primary">Get in Touch →</a>
+</div>
+
+<script src="shared-layout.js"></script>
+</body>
+</html>
