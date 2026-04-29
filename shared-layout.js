@@ -51,14 +51,14 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:hafiz.ali@strath.ac.uk">hafiz.ali@strath.ac.uk</a></li>
-          <li><a href="https://www.strath.ac.uk" target="_blank">University of Strathclyde</a></li>
-          <li><a href="https://www.gsk.com" target="_blank">GSK, Stevenage</a></li>
+          <li><a href="mailto:h.saqib78@gmail.com">h.saqib78@gmail.com</a></li>
+          <li><a href="https://www.strath.ac.uk" target="_blank">The University of Liverpool</a></li>
+          <li><a href="https://www.gsk.com" target="_blank">Liverpool, United Kingdom</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; ${new Date().getFullYear()} ALI Research Group &nbsp;·&nbsp; University of Strathclyde &amp; GSK
+      &copy; ${new Date().getFullYear()} ALI Research Group &nbsp;·&nbsp; The University of Liverpool
     </div>
   </footer>`;
 
