@@ -26,7 +26,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="nav-logo">ALI <span style="color:var(--gold)">Research</span> Group</div>
-        <p>Advancing computational chemistry, structural biology, medicinal chemistry, and machine learning for next-generation antibiotic design. Based at the University of Liverpool, Liverpool, United Kingdom.</p>
+        <p>Department of Chemistry and Pharmacology. University of Liverpool, Liverpool, UK.</p>
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
@@ -52,13 +52,14 @@
         <h4>Contact</h4>
         <ul>
           <li><a href="mailto:h.saqib78@gmail.com">h.saqib78@gmail.com</a></li>
-          <li><a href="https://www.liverpool.ac.uk" target="_blank">The University of Liverpool</a></li>
-          <li><a href="https://www.liverpool.ac.uk" target="_blank">Liverpool, United Kingdom</a></li>
+          <li><a href="https://www.liverpool.ac.uk/chemistry/research/medicinal-chemistry/" target="_blank">Medicinal Chemistry Group</a></li>
+          <li><a href="+44 (0) 7448520445" target="_blank">+44 (0) 7448520445</a></li>
+          <li><a href="https://orcid.org/my-orcid?orcid=0000-0001-5770-5376/" target="_blank">img/ORCID.png</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; ${new Date().getFullYear()} ALI Research Group &nbsp;·&nbsp; The University of Liverpool
+      &copy; ${new Date().getFullYear()} ALI Research Group &nbsp;·&nbsp; University of Liverpool
     </div>
   </footer>`;
 
