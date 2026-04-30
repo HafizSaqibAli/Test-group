@@ -130,11 +130,18 @@
       padding: .3rem .9rem; font-size: .78rem;
     }
 
-    @media (max-width: 1000px) {
+    @media (max-width: 768px) {
       .pi-section { flex-direction: column; text-align: center; }
       .pi-badges { justify-content: center; }
       .stats-bar { gap: 2rem; }
     }
+    /* ── ADD THIS ──────────────────────────────────────── */
+    .section-header.fade-up p {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
   </style>
 </head>
 <body>
