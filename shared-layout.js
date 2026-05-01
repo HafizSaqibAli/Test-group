@@ -27,7 +27,12 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="nav-logo">ALI <span style="color:var(--gold)">Research</span> Group</div>
-        <p>Department of Chemistry and Pharmacology. University of Liverpool, Liverpool, UK.</p>
+        <p>Department of Chemistry and Pharmacology</p>
+        <p>University of Liverpool</p>
+        <p>Crown Street</p>
+        <p>Liverpool</p>
+        <p>L69 7ZD</p>
+        <p>United Kingdom</p>
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
