@@ -241,3 +241,6 @@ img { max-width: 100%; display: block; }
   .grid-4 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
 }
+.section .section-header p {
+  max-width: 100% !important;
+}
